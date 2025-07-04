@@ -12,7 +12,7 @@ The wine quality prediction system accepts input values for several chemical pro
 
 ## 🚀 Live Demo
 
-[C:\Users\Raiyyan LUCKY\OneDrive\Desktop\WineQT\WineQT_SS.jpeg]
+![Image](https://github.com/user-attachments/assets/bf30ee5e-db92-4e4c-b20b-2167956bfe61)
 ---
 
 ## ⚙️ Tech Stack
