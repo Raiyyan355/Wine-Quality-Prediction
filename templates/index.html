@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Quality Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #4B0101; /* Wine color */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #FFD700; /* Gold */
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        form input[type="submit"] {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background-color: #FFD700;
+            color: #4B0101;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #800000;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wine Quality Predictor 🍷</h1>
+        <form action="/predict" method="post">
+            <input type="text" name="fixed_acidity" placeholder="Fixed Acidity" required>
+            <input type="text" name="volatile_acidity" placeholder="Volatile Acidity" required>
+            <input type="text" name="citric_acid" placeholder="Citric Acid" required>
+            <input type="text" name="residual_sugar" placeholder="Residual Sugar" required>
+            <input type="text" name="chlorides" placeholder="Chlorides" required>
+            <input type="text" name="free_sulfur_dioxide" placeholder="Free Sulfur Dioxide" required>
+            <input type="text" name="total_sulfur_dioxide" placeholder="Total Sulfur Dioxide" required>
+            <input type="text" name="density" placeholder="Density" required>
+            <input type="text" name="pH" placeholder="pH" required>
+            <input type="text" name="sulphates" placeholder="Sulphates" required>
+            <input type="text" name="alcohol" placeholder="Alcohol" required>
+            <input type="submit" value="Predict Quality">
+        </form>
+
+        {% if prediction %}
+            <div class="result">{{ prediction }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
